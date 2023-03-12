@@ -1,0 +1,23 @@
+geolocator_response_example = [
+    {'place_id': 294053356,
+     'licence': 'Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright',
+     'osm_type': 'way',
+     'osm_id': 1016487165,
+     'lat': '40.75972085',
+     'lon': '-73.96107372503849',
+     'display_name': 'Bridgemarket Building, Ed Koch Queensboro Bridge Lower Roadway, Roosevelt Island, Upper East Side, Manhattan, New York County, City of New York, New York, 10155, United States',
+     'address': {'building': 'Bridgemarket Building',
+                 'road': 'Ed Koch Queensboro Bridge Lower Roadway',
+                 'neighbourhood': 'Roosevelt Island',
+                 'quarter': 'Upper East Side',
+                 'suburb': 'Manhattan',
+                 'county': 'New York County',
+                 'city': 'City of New York',
+                 'state': 'New York',
+                 'ISO3166-2-lvl4': 'US-NY',
+                 'postcode': '10155',
+                 'country': 'United States',
+                 'country_code': 'us'
+                 },
+     'boundingbox': ['40.7593922', '40.7600555', '-73.9616232', '-73.9605264']
+     }]
