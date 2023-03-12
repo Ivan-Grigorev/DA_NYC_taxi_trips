@@ -1,0 +1,4 @@
+geopy == "*"
+matplotlib == "*"
+numpy == "*"
+pandas == "*"
