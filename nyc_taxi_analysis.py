@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import datetime
 
 
-pd.set_option("display.max_columns", 30)
+pd.set_option("display.max_columns", 50)
 pd.set_option("display.width", 1000)
 
 
@@ -107,7 +107,7 @@ class NYCTaxiAnalysis:
         """
         3. Analyze the impact of weather on taxi rides.
         """
-        weather_data = pd.read_csv("CSV/datasets/nyc_weather_central_park_2016.csv")
+        weather_data = pd.read_csv("CSV/datasets/nyc_weather_central_park.csv")
         return weather_data
 
     def analysis_visualization(self):
