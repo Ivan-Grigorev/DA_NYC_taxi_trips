@@ -1,4 +1,4 @@
-geolocator_response_example = [
+geolocator_response = [
     {'place_id': 294053356,
      'licence': 'Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright',
      'osm_type': 'way',
@@ -54,3 +54,11 @@ geolocator_response_example = [
 2  -74.01712051881411 40.70746253088078, -74.0166...           6       84        98       83       101  10280.0  10280.0  1222600640  1222600933  BATTERY PL       2        NaN         1        42  11/29/2007 12:00:00 AM  03/17/2017 12:00:00 AM      TW        1          13         13        C        NaN        NaN      NaN        PL        NaN        NaN  BATTERY PL  BATTERY        NaN          U  280.444781
 3  -74.01693786186667 40.704813986597024, -74.017...           8      NaN       NaN      NaN       NaN  10280.0  10280.0   212262587  1222600931  BATTERY PL       2        NaN         1        42  11/29/2007 12:00:00 AM  07/18/2017 12:00:00 AM      TW        1          13         13        C        NaN        NaN      NaN        PL        NaN        NaN  BATTERY PL  BATTERY        NaN          U   32.070139
 4  -74.01428922948978 40.70454907535256, -74.0143...          14      NaN       NaN      NaN       NaN  10004.0  10004.0   212262587   212262395  BATTERY PL       2        NaN         1        24  04/22/2011 12:00:00 AM  04/15/2019 12:00:00 AM      TF        1          13         13        C        NaN        NaN      NaN        PL        NaN        NaN  BATTERY PL  BATTERY        NaN          T  206.271850
+
+BOROCODES = {
+    1: 'Manhattan',
+    2: 'Bronx',
+    3: 'Brooklyn',
+    4: 'Queens',
+    5: 'Staten Island',
+}
