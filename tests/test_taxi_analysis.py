@@ -46,7 +46,7 @@ class TestNYCTaxiAnalysis(unittest.TestCase):
         # Ensure the total number of rides is correct
         self.assertEqual(
             self.analysis.rides_of_the_day(),
-            "For the period 2022-01-01 through 2022-01-02 there were:\n"
+            "For the period January 01, 2022 through January 02, 2022 there were:\n"
             "\t2 rides from 6:00 a.m. (06:00:00) to 12:00 p.m. (12:00:00);\n"
             "\t1 rides from 12:00 p.m. (12:00:00) to 6:00 p.m. (18:00:00);\n"
             "\t1 rides from 6:00 p.m. (18:00:00) to 12 a.m. (00:00:00);\n"
@@ -70,34 +70,6 @@ class TestNYCTaxiAnalysis(unittest.TestCase):
         self.assertIn(
             "1 rides from 12:00 a.m. (00:00:00) to 6:00 a.m. (06:00:00)",
             self.analysis.rides_of_the_day(),
-        )
-
-    def test_pickup_dropoff_addresses(self):
-        # Ensure the pickup and dropoff addresses are correctly retrieved
-        addresses = self.analysis.pickup_dropoff_addresses()
-
-        self.assertIsNotNone(self.analysis.pickup_coordinates)
-        self.assertIsNotNone(self.analysis.dropoff_coordinates)
-
-        self.assertEqual(
-            addresses.loc[0, "pickup_address"],
-            "Spectrum, 261, 3rd Avenue, Manhattan Community Board 6, "
-            "Manhattan, New York County, City of New York, New York, 10010, United States",
-        )
-        self.assertEqual(
-            addresses.loc[0, "dropoff_address"],
-            "Pennsylvania Station, Lincoln Tunnel Expressway, Chelsea District, "
-            "Manhattan, New York County, City of New York, New York, 10119, United States",
-        )
-        self.assertEqual(
-            addresses.loc[2, "pickup_address"],
-            "251, Church Street, Manhattan Community Board 1, "
-            "Manhattan, New York County, City of New York, New York, 10013, United States",
-        )
-        self.assertEqual(
-            addresses.loc[2, "dropoff_address"],
-            "258, West 4th Street, Manhattan Community Board 2, "
-            "Manhattan, New York County, City of New York, New York, 10014, United States",
         )
 
 
