@@ -62,3 +62,12 @@ BOROCODES = {
     4: 'Queens',
     5: 'Staten Island',
 }
+
+---------- nyc_taxi.csv ----------
+
+            id  vendor_id     pickup_datetime     dropoff_datetime  passenger_count  pickup_longitude  pickup_latitude  dropoff_longitude  dropoff_latitude store_and_fwd_flag  trip_duration                                     pickup_address     pickup_street pickup_borough                                    dropoff_address     dropoff_street dropoff_borough
+179  id0790516          1 2016-01-03 23:17:58  2016-01-03 23:30:55                2        -73.971581        40.794712         -73.982361         40.774296                  N            777  The Ancott, Broadway, Manhattan Community Boar...          Broadway      Manhattan  Newsstand, Broadway, Upper West Side, Manhatta...           Broadway       Manhattan
+39   id2649925          2 2016-01-04 19:10:00  2016-01-04 19:14:47                1        -73.971748        40.757706         -73.971939         40.765659                  N            287  345 Park Avenue, 345, Park Avenue, Manhattan C...       Park Avenue      Manhattan  800, 5th Avenue, Manhattan Community Board 8, ...         5th Avenue       Manhattan
+108  id2440127          2 2016-01-05 07:21:40  2016-01-05 07:27:34                2        -73.973129        40.793076         -73.961540         40.796181                  N            354  Broadway & West 94th Street, Broadway, Manhatt...          Broadway      Manhattan  103th Street, Central Park West, Bloomingdale,...  Central Park West       Manhattan
+3    id3744273          2 2016-01-05 09:44:31  2016-01-05 10:03:32                6        -73.961670        40.759720         -73.956779         40.780628                  N           1141  Bridgemarket Building, East 59th Street, Manha...  East 59th Street      Manhattan  1049, Park Avenue, Manhattan Community Board 8...        Park Avenue       Manhattan
+61   id1431716          1 2016-01-05 18:39:10  2016-01-05 18:50:22                1        -73.959946        40.773495         -73.965019         40.758003                  N            672  1095, Lexington Avenue, Manhattan Community Bo...  Lexington Avenue      Manhattan  The Bristol, 300, East 56th Street, Manhattan ...   East 56th Street       Manhattan
