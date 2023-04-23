@@ -69,7 +69,7 @@ class HandleDatasets:
         )
 
     def __repr__(self):
-        return pd.read_csv(self.data)
+        return self.data
 
 
 if __name__ == "__main__":
@@ -78,7 +78,7 @@ if __name__ == "__main__":
         addresses_file="CSV/datasets/nyc_streets.csv",
         weather_file="CSV/datasets/nyc_weather_central_park.csv",
         data="CSV/nyc_taxi.csv",
-        lines=20,
+        lines=200,
     )
 
     handle_datasets.pickup_dropoff_addresses()
