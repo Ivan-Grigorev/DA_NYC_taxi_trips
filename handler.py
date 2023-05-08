@@ -6,18 +6,18 @@ import multiprocessing
 
 from geopy.geocoders import Nominatim
 
+
 pd.set_option("display.max_columns", None)
 pd.set_option("display.max_rows", None)
 pd.set_option("display.width", 1000)
-pd.set_option("max_colwidth", 100)
+pd.set_option("max_colwidth", 200)
 
 
 class HandleDatasets:
-    def __init__(self, trips_file, addresses_file, weather_file, data, lines=None):
+    def __init__(self, trips_file, weather_file, data_file, lines=None):
         self.trips = pd.read_csv(trips_file, low_memory=False).head(lines)
-        self.addresses = pd.read_csv(addresses_file, low_memory=False).head(lines)
-        self.weather = pd.read_csv(weather_file, low_memory=False).head(lines)
-        self.data = data
+        self.weather = pd.read_csv(weather_file, low_memory=False)
+        self.data = pd.read_csv(data_file, low_memory=False).head(lines)
 
     # Get streets names, boroughs by pickup and dropoff coordinates
     def get_pickup_location(self, coord):
@@ -31,7 +31,7 @@ class HandleDatasets:
             f"https://nominatim.openstreetmap.org/reverse?{coord}&format=json"
         ).json()
 
-    def pickup_dropoff_addresses(self):
+    def get_pickup_dropoff_addresses(self):
         start_time = time.time()
         # Get pickup and dropoff coordinates
         pickup_coordinates = [
@@ -61,25 +61,46 @@ class HandleDatasets:
         self.trips["dropoff_borough"] = [i.get("address", {}).get("suburb", {}) for i in dropoff_data]
 
         # Create new dataset with processed data
-        self.trips.to_csv(self.data, index=False)
+        self.trips.to_csv("CSV/nyc_taxi.csv", index=False)
 
         print(
-            f"The {HandleDatasets.pickup_dropoff_addresses.__name__}() function successfully completed "
+            f"The {HandleDatasets.get_pickup_dropoff_addresses.__name__}() function successfully completed "
             f"processing {len(self.trips)} lines in {round((time.time() - start_time), 2)} seconds."
         )
 
+    def get_weather_by_date(self):
+        # This function get weather conditions by date and add it to the nyc_taxi_trips.csv dataset
+
+        # Convert the date format in nyc_weather_central_park.csv from 1-1-2016 to pandas datetime format
+        self.weather['date'] = pd.to_datetime(self.weather['date'], dayfirst=True)
+        self.weather['date'] = self.weather['date'].dt.date
+
+        # Create column with only pickup date
+        self.data['pickup_datetime'] = pd.to_datetime(self.data['pickup_datetime'])
+        self.data['date'] = self.data['pickup_datetime'].dt.date
+
+        # Add weather data by date using pandas merge
+        self.data = pd.merge(self.data, self.weather, on='date')
+
+        # Drop temporary created 'date' column
+        self.data = self.data.drop('date', axis=1)
+
+        # Save proceeded data with weather conditions to nyc_taxi.csv
+        self.data.to_csv("CSV/nyc_taxi.csv", index=False)
+
     def __repr__(self):
-        return self.data
+        return self.data.sort_values(ascending=True, by='pickup_datetime')
 
 
 if __name__ == "__main__":
     handle_datasets = HandleDatasets(
         trips_file="CSV/datasets/nyc_taxi_trips.csv",
-        addresses_file="CSV/datasets/nyc_streets.csv",
         weather_file="CSV/datasets/nyc_weather_central_park.csv",
-        data="CSV/nyc_taxi.csv",
-        lines=200,
+        data_file="CSV/nyc_taxi.csv",
+        lines=5,
     )
 
-    handle_datasets.pickup_dropoff_addresses()
+    handle_datasets.get_pickup_dropoff_addresses()
+    handle_datasets.get_weather_by_date()
+
     print(handle_datasets.__repr__())
