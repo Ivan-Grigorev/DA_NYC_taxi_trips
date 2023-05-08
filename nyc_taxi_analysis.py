@@ -100,8 +100,7 @@ class NYCTaxiAnalysis:
         """
         3. Analyze the impact of weather on taxi rides.
         """
-        weather_data = pd.read_csv("CSV/datasets/nyc_weather_central_park.csv")
-        return weather_data
+        #TODO
 
     def analysis_visualization(self):
         print(self.rides_of_the_day(), '\n')
@@ -119,9 +118,9 @@ if __name__ == "__main__":
         # lines=5,
     )
 
-    # print(nyc_taxi_analysis.rides_of_the_day())
-    # print(nyc_taxi_analysis.most_common_locations())
-    # print(nyc_taxi_analysis.weather_by_day())
+    print(nyc_taxi_analysis.rides_of_the_day())
+    print(nyc_taxi_analysis.most_common_locations())
+    print(nyc_taxi_analysis.weather_by_day())
 
     nyc_taxi_analysis.analysis_visualization()
-    # print(nyc_taxi_analysis.__repr__())
+    print(nyc_taxi_analysis.__repr__())
