@@ -69,7 +69,7 @@ class HandleDatasets:
         )
 
     def get_weather_by_date(self):
-        # This function get weather conditions by date and add it to the nyc_taxi_trips.csv dataset
+        # This function get weather conditions by date and add it to the nyc_taxi.csv dataset
 
         # Convert the date format in nyc_weather_central_park.csv from 1-1-2016 to pandas datetime format
         self.weather['date'] = pd.to_datetime(self.weather['date'], dayfirst=True)
