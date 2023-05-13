@@ -10,7 +10,7 @@ from geopy.geocoders import Nominatim
 pd.set_option("display.max_columns", None)
 pd.set_option("display.max_rows", None)
 pd.set_option("display.width", 1000)
-pd.set_option("max_colwidth", 200)
+pd.set_option("max_colwidth", 100)
 
 
 class HandleDatasets:
@@ -97,10 +97,10 @@ if __name__ == "__main__":
         trips_file="CSV/datasets/nyc_taxi_trips.csv",
         weather_file="CSV/datasets/nyc_weather_central_park.csv",
         data_file="CSV/nyc_taxi.csv",
-        lines=5,
+        # lines=10000,
     )
 
-    handle_datasets.get_pickup_dropoff_addresses()
-    handle_datasets.get_weather_by_date()
+    # handle_datasets.get_pickup_dropoff_addresses()
+    # print(handle_datasets.get_weather_by_date())
 
     print(handle_datasets.__repr__())
