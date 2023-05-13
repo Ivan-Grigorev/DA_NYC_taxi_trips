@@ -1,0 +1,73 @@
+geolocator_response = [
+    {'place_id': 294053356,
+     'licence': 'Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright',
+     'osm_type': 'way',
+     'osm_id': 1016487165,
+     'lat': '40.75972085',
+     'lon': '-73.96107372503849',
+     'display_name': 'Bridgemarket Building, Ed Koch Queensboro Bridge Lower Roadway, Roosevelt Island, Upper East Side, Manhattan, New York County, City of New York, New York, 10155, United States',
+     'address': {'building': 'Bridgemarket Building',
+                 'road': 'Ed Koch Queensboro Bridge Lower Roadway',
+                 'neighbourhood': 'Roosevelt Island',
+                 'quarter': 'Upper East Side',
+                 'suburb': 'Manhattan',
+                 'county': 'New York County',
+                 'city': 'City of New York',
+                 'state': 'New York',
+                 'ISO3166-2-lvl4': 'US-NY',
+                 'postcode': '10155',
+                 'country': 'United States',
+                 'country_code': 'us'
+                 },
+     'boundingbox': ['40.7593922', '40.7600555', '-73.9616232', '-73.9605264']
+     }]
+
+
+---------- nyc_taxi_trips.csv ----------
+          id  vendor_id      pickup_datetime     dropoff_datetime  passenger_count  pickup_longitude  pickup_latitude  dropoff_longitude  dropoff_latitude store_and_fwd_flag  trip_duration
+0  id1080784          2  2016-02-29 16:40:21  2016-02-29 16:47:01                1        -73.953918        40.778873         -73.963875         40.771164                  N            400
+1  id0889885          1  2016-03-11 23:35:37  2016-03-11 23:53:57                2        -73.988312        40.731743         -73.994751         40.694931                  N           1100
+2  id0857912          2  2016-02-21 17:59:33  2016-02-21 18:26:48                2        -73.997314        40.721458         -73.948029         40.774918                  N           1635
+3  id3744273          2  2016-01-05 09:44:31  2016-01-05 10:03:32                6        -73.961670        40.759720         -73.956779         40.780628                  N           1141
+4  id0232939          1  2016-02-17 06:42:23  2016-02-17 06:56:31                1        -74.017120        40.708469         -73.988182         40.740631                  N            848
+
+---------- Centerline.csv ----------
+                                            the_geom  PHYSICALID L_LOW_HN L_HIGH_HN R_LOW_HN R_HIGH_HN    L_ZIP    R_ZIP  L_BLKFC_ID  R_BLKFC_ID    ST_LABEL  STATUS  BIKE_LANE  BOROCODE  ST_WIDTH                 CREATED                MODIFIED TRAFDIR  RW_TYPE  FRM_LVL_CO  TO_LVL_CO SNOW_PRI PRE_MODIFI PRE_DIRECT PRE_TYPE POST_TYPE POST_DIREC POST_MODIF  FULL_STREE  ST_NAME BIKE_TRAFD SEGMENT_TY  SHAPE_Leng
+0  MULTILINESTRING ((-74.01793061274537 40.706174...           3       50        64       51        63  10280.0  10280.0   212262587  1222601917  BATTERY PL       2        NaN         1        42  11/29/2007 12:00:00 AM  03/17/2017 12:00:00 AM      TW        1          13         13        C        NaN        NaN      NaN        PL        NaN        NaN  BATTERY PL  BATTERY        NaN          U  262.777812
+1  MULTILINESTRING ((-74.01757437049282 40.706839...           5       66        82       65        81  10280.0  10280.0  1222600642  1222604562  BATTERY PL       2        NaN         1        42  11/29/2007 12:00:00 AM  03/17/2017 12:00:00 AM      TW        1          13         13        C        NaN        NaN      NaN        PL        NaN        NaN  BATTERY PL  BATTERY        NaN          U  259.415989
+2  MULTILINESTRING ((-74.01712051881411 40.707462...           6       84        98       83       101  10280.0  10280.0  1222600640  1222600933  BATTERY PL       2        NaN         1        42  11/29/2007 12:00:00 AM  03/17/2017 12:00:00 AM      TW        1          13         13        C        NaN        NaN      NaN        PL        NaN        NaN  BATTERY PL  BATTERY        NaN          U  280.444781
+3  MULTILINESTRING ((-74.01693786186667 40.704813...           8      NaN       NaN      NaN       NaN  10280.0  10280.0   212262587  1222600931  BATTERY PL       2        NaN         1        42  11/29/2007 12:00:00 AM  07/18/2017 12:00:00 AM      TW        1          13         13        C        NaN        NaN      NaN        PL        NaN        NaN  BATTERY PL  BATTERY        NaN          U   32.070139
+4  MULTILINESTRING ((-74.01428922948978 40.704549...          14      NaN       NaN      NaN       NaN  10004.0  10004.0   212262587   212262395  BATTERY PL       2        NaN         1        24  04/22/2011 12:00:00 AM  04/15/2019 12:00:00 AM      TF        1          13         13        C        NaN        NaN      NaN        PL        NaN        NaN  BATTERY PL  BATTERY        NaN          T  206.271850
+
+---------- nyc_weather_central_park.csv ----------
+       date  maximum temperature  minimum temperature  average temperature precipitation snow fall snow depth
+0  1-1-2016                   42                   34                 38.0          0.00       0.0          0
+1  2-1-2016                   40                   32                 36.0          0.00       0.0          0
+2  3-1-2016                   45                   35                 40.0          0.00       0.0          0
+3  4-1-2016                   36                   14                 25.0          0.00       0.0          0
+4  5-1-2016                   29                   11                 20.0          0.00       0.0          0
+
+---------- nyc_streets.csv ----------
+                                            the_geom  PHYSICALID L_LOW_HN L_HIGH_HN R_LOW_HN R_HIGH_HN    L_ZIP    R_ZIP  L_BLKFC_ID  R_BLKFC_ID    ST_LABEL  STATUS  BIKE_LANE  BOROCODE  ST_WIDTH                 CREATED                MODIFIED TRAFDIR  RW_TYPE  FRM_LVL_CO  TO_LVL_CO SNOW_PRI PRE_MODIFI PRE_DIRECT PRE_TYPE POST_TYPE POST_DIREC POST_MODIF  FULL_STREE  ST_NAME BIKE_TRAFD SEGMENT_TY  SHAPE_Leng
+0  -74.01793061274537 40.70617486563979, -74.0178...           3       50        64       51        63  10280.0  10280.0   212262587  1222601917  BATTERY PL       2        NaN         1        42  11/29/2007 12:00:00 AM  03/17/2017 12:00:00 AM      TW        1          13         13        C        NaN        NaN      NaN        PL        NaN        NaN  BATTERY PL  BATTERY        NaN          U  262.777812
+1  -74.01757437049282 40.70683986715218, -74.0171...           5       66        82       65        81  10280.0  10280.0  1222600642  1222604562  BATTERY PL       2        NaN         1        42  11/29/2007 12:00:00 AM  03/17/2017 12:00:00 AM      TW        1          13         13        C        NaN        NaN      NaN        PL        NaN        NaN  BATTERY PL  BATTERY        NaN          U  259.415989
+2  -74.01712051881411 40.70746253088078, -74.0166...           6       84        98       83       101  10280.0  10280.0  1222600640  1222600933  BATTERY PL       2        NaN         1        42  11/29/2007 12:00:00 AM  03/17/2017 12:00:00 AM      TW        1          13         13        C        NaN        NaN      NaN        PL        NaN        NaN  BATTERY PL  BATTERY        NaN          U  280.444781
+3  -74.01693786186667 40.704813986597024, -74.017...           8      NaN       NaN      NaN       NaN  10280.0  10280.0   212262587  1222600931  BATTERY PL       2        NaN         1        42  11/29/2007 12:00:00 AM  07/18/2017 12:00:00 AM      TW        1          13         13        C        NaN        NaN      NaN        PL        NaN        NaN  BATTERY PL  BATTERY        NaN          U   32.070139
+4  -74.01428922948978 40.70454907535256, -74.0143...          14      NaN       NaN      NaN       NaN  10004.0  10004.0   212262587   212262395  BATTERY PL       2        NaN         1        24  04/22/2011 12:00:00 AM  04/15/2019 12:00:00 AM      TF        1          13         13        C        NaN        NaN      NaN        PL        NaN        NaN  BATTERY PL  BATTERY        NaN          T  206.271850
+
+BOROCODES = {
+    1: 'Manhattan',
+    2: 'Bronx',
+    3: 'Brooklyn',
+    4: 'Queens',
+    5: 'Staten Island',
+}
+
+---------- nyc_taxi.csv ----------
+
+            id  vendor_id     pickup_datetime     dropoff_datetime  passenger_count  pickup_longitude  pickup_latitude  dropoff_longitude  dropoff_latitude store_and_fwd_flag  trip_duration                                     pickup_address     pickup_street pickup_borough                                    dropoff_address     dropoff_street dropoff_borough
+179  id0790516          1 2016-01-03 23:17:58  2016-01-03 23:30:55                2        -73.971581        40.794712         -73.982361         40.774296                  N            777  The Ancott, Broadway, Manhattan Community Boar...          Broadway      Manhattan  Newsstand, Broadway, Upper West Side, Manhatta...           Broadway       Manhattan
+39   id2649925          2 2016-01-04 19:10:00  2016-01-04 19:14:47                1        -73.971748        40.757706         -73.971939         40.765659                  N            287  345 Park Avenue, 345, Park Avenue, Manhattan C...       Park Avenue      Manhattan  800, 5th Avenue, Manhattan Community Board 8, ...         5th Avenue       Manhattan
+108  id2440127          2 2016-01-05 07:21:40  2016-01-05 07:27:34                2        -73.973129        40.793076         -73.961540         40.796181                  N            354  Broadway & West 94th Street, Broadway, Manhatt...          Broadway      Manhattan  103th Street, Central Park West, Bloomingdale,...  Central Park West       Manhattan
+3    id3744273          2 2016-01-05 09:44:31  2016-01-05 10:03:32                6        -73.961670        40.759720         -73.956779         40.780628                  N           1141  Bridgemarket Building, East 59th Street, Manha...  East 59th Street      Manhattan  1049, Park Avenue, Manhattan Community Board 8...        Park Avenue       Manhattan
+61   id1431716          1 2016-01-05 18:39:10  2016-01-05 18:50:22                1        -73.959946        40.773495         -73.965019         40.758003                  N            672  1095, Lexington Avenue, Manhattan Community Bo...  Lexington Avenue      Manhattan  The Bristol, 300, East 56th Street, Manhattan ...   East 56th Street       Manhattan
