@@ -14,6 +14,7 @@ class TestHandleDatasets(unittest.TestCase):
         )
 
     def test_get_pickup_location(self):
+        # Call the function and get result for test
         coord = "40.778873 -73.953918"
         result = self.handle_datasets.get_pickup_location(coord)
 
@@ -25,6 +26,7 @@ class TestHandleDatasets(unittest.TestCase):
         )
 
     def test_get_dropoff_location(self):
+        # Call the function and get result for test
         coord = "lat=40.694931&lon=-73.994751"
         result = self.handle_datasets.get_dropoff_location(coord)
 
@@ -36,18 +38,20 @@ class TestHandleDatasets(unittest.TestCase):
         )
 
     def test_get_pickup_dropoff_addresses(self):
+        # Call the function
         self.handle_datasets.get_pickup_dropoff_addresses()
-        self.assertIsNotNone(self.handle_datasets.trips["pickup_address"])
-        self.assertIsNotNone(self.handle_datasets.trips["pickup_street"])
-        self.assertIsNotNone(self.handle_datasets.trips["pickup_borough"])
-        self.assertIsNotNone(self.handle_datasets.trips["dropoff_address"])
-        self.assertIsNotNone(self.handle_datasets.trips["dropoff_street"])
-        self.assertIsNotNone(self.handle_datasets.trips["dropoff_borough"])
+
+        # Assert that columns in dataset with proceeded data and are not None
+        self.assertIsNotNone(self.handle_datasets.data["pickup_address"])
+        self.assertIsNotNone(self.handle_datasets.data["pickup_street"])
+        self.assertIsNotNone(self.handle_datasets.data["pickup_borough"])
+        self.assertIsNotNone(self.handle_datasets.data["dropoff_address"])
+        self.assertIsNotNone(self.handle_datasets.data["dropoff_street"])
+        self.assertIsNotNone(self.handle_datasets.data["dropoff_borough"])
 
     def test_get_weather_by_date(self):
+        # Call the function
         self.handle_datasets.get_weather_by_date()
-
-        # Load the nyc_taxi.csv file
         data = pd.read_csv("CSV/nyc_taxi.csv")
 
         # Assert that all rows are present in the merged data
