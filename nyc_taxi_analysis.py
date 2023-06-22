@@ -1,6 +1,6 @@
 import pandas as pd
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 pd.set_option("display.max_columns", None)
@@ -129,6 +129,21 @@ class NYCTaxiAnalysis:
             f"TOTAL: {len(self.data)}\n"
         )
 
+    def rides_duration(self):
+        """
+        4. Predict ride duration.
+        """
+        max_duration_sec = self.data['trip_duration'].max()
+        min_duration_sec = self.data['trip_duration'].min()
+
+        max_duration_time = timedelta(seconds=int(max_duration_sec))
+        min_duration_time = timedelta(seconds=int(min_duration_sec))
+
+        print(max_duration_time)
+        print(min_duration_time)
+
+        # return self.data[self.data['trip_duration'] == max_duration_sec]
+
     def analysis_visualization(self):
         """
         8. Visualisation of results
@@ -147,12 +162,13 @@ if __name__ == "__main__":
         dataset="CSV/nyc_taxi.csv",
         date_from="2016-01-01",
         date_to="2016-01-31",
-        lines=5,  # Select number of rows to proceed from head of dataset
+        # lines=5,  # Select number of rows to proceed from head of dataset
     )
 
-    print(nyc_taxi_analysis.rides_of_the_day())
-    print(nyc_taxi_analysis.most_common_locations())
-    print(nyc_taxi_analysis.weather_effect())
-
-    nyc_taxi_analysis.analysis_visualization()
+    # print(nyc_taxi_analysis.rides_of_the_day())
+    # print(nyc_taxi_analysis.most_common_locations())
+    # print(nyc_taxi_analysis.weather_effect())
+    # print(nyc_taxi_analysis.rides_duration())
+    #
+    # nyc_taxi_analysis.analysis_visualization()
     print(nyc_taxi_analysis.__repr__())
